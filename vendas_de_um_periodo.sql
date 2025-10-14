@@ -17,6 +17,7 @@ SELECT
     INNER JOIN
         parceiros p ON c.parceiro_id = p.id
 
-WHERE datahora> "2024-12-31 23:59:00"
+WHERE datahora> '2024-12-31 23:59:00'
+
 
 -- AND c.parceiro_id = 25745;
