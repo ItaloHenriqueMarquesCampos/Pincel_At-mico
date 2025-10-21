@@ -24,6 +24,8 @@ INNER JOIN
         ON f.contrato =c.ref_id
 
 WHERE
+    f.documento_fiscal != 'NEG#263132' #para não pegar alunos que já estão em negociação.
+AND
     c.datahora > '2017-01-01 14:40:19'
 AND
     f.data_pagto < (CURRENT_DATE - INTERVAL 60 DAY)
@@ -54,4 +56,5 @@ AND NOT EXISTS (
     #c.parceiro_id = 25745;
 
 # Esta query busca alunos que pagaram a taxa de matrícula e não pagaram os outros boletos.
+
 # Caso o curso do aluno possua somente 1 parcela e ela seja paga, este aluno não será mostrado pois já terá concluido o pagamento.
